@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FindMyCourse — find a course that fits you</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="mark" aria-hidden="true">
+    <svg viewBox="0 0 64 64" width="40" height="40">
+      <rect x="6" y="30" width="26" height="26" fill="#D1C1F2"/>
+      <polygon points="34,8 54,44 14,44" fill="#B9A5E2"/>
+      <circle cx="44" cy="20" r="14" fill="#9279BA"/>
+    </svg>
+  </div>
+  <div class="wordmark">
+    <span class="brand">FindMyCourse</span>
+    <span class="tag">find the course that actually fits you</span>
+  </div>
+</header>
+
+<main class="layout">
+  <section class="panel form-panel" aria-label="Search preferences">
+    <h1>Tell us what you're looking for</h1>
+
+    <form id="search-form">
+      <label class="field">
+        <span>Current degree</span>
+        <select id="degree">
+          <option value="">Prefer not to say</option>
+          <option value="undergrad">Undergraduate</option>
+          <option value="masters">Master's</option>
+          <option value="phd">PhD</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Specialization</span>
+        <input id="specialization" type="text" placeholder="e.g. computer engineering" />
+      </label>
+
+      <label class="field">
+        <span>Target course topic</span>
+        <input id="target-topic" type="text" placeholder="e.g. cybersecurity" required />
+      </label>
+
+      <div class="field toggle-field">
+        <span>Course cost</span>
+        <div class="toggle-group" id="paid-toggle">
+          <button type="button" data-value="">Either</button>
+          <button type="button" data-value="false">Free</button>
+          <button type="button" data-value="true">Paid</button>
+        </div>
+      </div>
+
+      <label class="field">
+        <span>Max duration — <output id="duration-out">No limit</output></span>
+        <input id="duration" type="range" min="0" max="52" value="0" />
+      </label>
+
+      <label class="field">
+        <span>Extra detail <em>(optional)</em></span>
+        <textarea id="extra" rows="3" placeholder="Any concept you want covered, format you prefer, etc."></textarea>
+      </label>
+
+      <button type="submit" class="submit-btn">Find courses</button>
+    </form>
+  </section>
+
+  <section class="panel results-panel" aria-label="Recommended courses">
+    <h2>Your matches</h2>
+    <div id="status" class="status"></div>
+    <ol id="results" class="results-list"></ol>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>Built for the Advanced Machine Learning course project.</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

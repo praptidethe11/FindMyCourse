@@ -1,0 +1,186 @@
+:root{
+  --lav-100:#E7DDFF;
+  --lav-200:#D1C1F2;
+  --lav-300:#B9A5E2;
+  --lav-400:#9279BA;
+  --lav-400-hover:#7C63A6;
+  --ink:#241C33;
+  --bg:#FBFAFF;
+  --paper:#FFFFFF;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  margin:0;
+  padding:0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, .brand{
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+h1{ font-size: 1.5rem; margin-bottom: 1.5rem; }
+h2{ font-size: 1.25rem; margin-bottom: 1rem; }
+
+.topbar{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  padding: 1.5rem 2rem;
+  border-bottom: 3px solid var(--ink);
+}
+
+.wordmark{ display:flex; flex-direction:column; }
+.brand{ font-size:1.4rem; }
+.tag{
+  font-family:"Work Sans", sans-serif;
+  font-size:0.85rem;
+  color: var(--lav-400);
+  font-weight:500;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns: minmax(280px, 380px) 1fr;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-left: 3px solid var(--ink);
+  border-right: 3px solid var(--ink);
+}
+
+.panel{ padding: 2rem; }
+.form-panel{ border-right: 3px solid var(--ink); background: var(--paper); }
+.results-panel{ background: var(--bg); }
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:0.4rem;
+  margin-bottom: 1.25rem;
+  font-size:0.9rem;
+  font-weight:500;
+}
+
+.field em{ font-weight:400; color:#5b5069; font-style:normal; }
+
+.field input[type="text"],
+.field select,
+.field textarea{
+  font-family:"Work Sans", sans-serif;
+  font-size:0.95rem;
+  padding:0.6rem 0.7rem;
+  border:2px solid var(--ink);
+  border-radius:0;
+  background:var(--paper);
+  color:var(--ink);
+}
+
+.field textarea{ resize: vertical; font-weight:400; }
+
+.field input[type="range"]{ accent-color: var(--lav-400); }
+
+.toggle-group{ display:flex; border:2px solid var(--ink); }
+.toggle-group button{
+  flex:1;
+  padding:0.55rem 0.5rem;
+  border:none;
+  background:var(--paper);
+  font-family:"Work Sans", sans-serif;
+  font-size:0.85rem;
+  font-weight:500;
+  cursor:pointer;
+  border-right: 2px solid var(--ink);
+  color: var(--ink);
+}
+.toggle-group button:last-child{ border-right:none; }
+.toggle-group button.active{ background: var(--lav-300); }
+
+.submit-btn{
+  width:100%;
+  padding:0.85rem;
+  margin-top:0.5rem;
+  background: var(--lav-400);
+  color:#fff;
+  border:2px solid var(--ink);
+  border-radius:0;
+  font-family:"Outfit", sans-serif;
+  font-weight:600;
+  font-size:1rem;
+  cursor:pointer;
+  transition: background 0.15s ease;
+}
+.submit-btn:hover{ background: var(--lav-400-hover); }
+
+.submit-btn:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline: 3px solid var(--lav-400);
+  outline-offset: 2px;
+}
+
+.status{ font-size:0.9rem; margin-bottom:1rem; min-height:1.2rem; }
+.status.error{ color:#8a3b3b; }
+
+.results-list{
+  list-style:none;
+  margin:0; padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+
+.result-card{
+  display:grid;
+  grid-template-columns: 3rem 1fr;
+  border:2px solid var(--ink);
+  background: var(--paper);
+}
+
+.result-rank{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:"Outfit", sans-serif;
+  font-weight:700;
+  font-size:1.3rem;
+  border-right:2px solid var(--ink);
+}
+
+.result-body{ padding: 0.9rem 1.1rem; }
+.result-title{ font-family:"Outfit", sans-serif; font-weight:600; font-size:1.05rem; margin:0 0 0.3rem; }
+.result-meta{ font-size:0.8rem; color: var(--lav-400); font-weight:500; margin-bottom:0.5rem; }
+.result-desc{ font-size:0.88rem; line-height:1.45; margin:0 0 0.5rem; }
+.result-link{ font-size:0.85rem; font-weight:500; color: var(--ink); text-decoration:underline; }
+
+.empty-state{
+  border:2px dashed var(--lav-300);
+  padding:2rem;
+  text-align:center;
+  font-size:0.9rem;
+  color: var(--lav-400);
+}
+
+.foot{
+  max-width:1100px;
+  margin:0 auto;
+  padding:1.25rem 2rem;
+  border:3px solid var(--ink);
+  border-top:none;
+  font-size:0.8rem;
+  color: var(--lav-400);
+}
+
+@media (max-width: 720px){
+  .layout{ grid-template-columns: 1fr; }
+  .form-panel{ border-right:none; border-bottom:3px solid var(--ink); }
+}

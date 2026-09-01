@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Generated data artifacts from Colab -- large binary files, not source code.
+# See README.md for how to regenerate/download these.
+backend/data/*
+!backend/data/.gitkeep
+
+# OS
+.DS_Store
