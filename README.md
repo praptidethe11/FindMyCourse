@@ -22,30 +22,32 @@ The result is a ranked list of courses that blends direct topic relevance with s
 
 ## Project structure
 
+```text
 FindMyCourse/
 ├── backend/
-│ ├── main.py FastAPI server exposing the recommendation endpoint
-│ ├── src/ Recommendation pipeline, organized by stage
-│ │ ├── config.py Shared constants (thresholds, hyperparameters, feature list)
-│ │ ├── ingest.py Raw dataset loading and unification
-│ │ ├── graph_build.py Embeddings and graph edge construction
-│ │ ├── clustering_spectral.py Spectral clustering baseline
-│ │ ├── clustering_gnn.py MinCut GNN with contrastive loss
-│ │ ├── edge_split.py Train/test edge split for leak-free evaluation
-│ │ ├── pairwise_features.py Feature engineering for the link predictor
-│ │ ├── ranker.py XGBoost link predictor training
-│ │ ├── tuning.py Bayesian hyperparameter search (Optuna)
-│ │ ├── interpret.py SHAP-based model explanations
-│ │ ├── evaluate.py Clustering and ranking evaluation metrics
-│ │ └── recommend.py Final recommendation function used by the API
-│ ├── models/ Trained model weights (GNN, XGBoost) go here
-│ ├── data/ Course data and embeddings go here
-│ ├── notebooks/ Original exploratory pipeline (Colab-derived), kept for reference
-│ └── requirements.txt Python dependencies
+│   ├── main.py                 # FastAPI server exposing the recommendation endpoint
+│   ├── src/                    # Recommendation pipeline, organized by stage
+│   │   ├── config.py           # Shared constants (thresholds, hyperparameters, feature list)
+│   │   ├── ingest.py           # Raw dataset loading and unification
+│   │   ├── graph_build.py      # Embeddings and graph edge construction
+│   │   ├── clustering_spectral.py  # Spectral clustering baseline
+│   │   ├── clustering_gnn.py   # MinCut GNN with contrastive loss
+│   │   ├── edge_split.py       # Train/test edge split for leak-free evaluation
+│   │   ├── pairwise_features.py# Feature engineering for the link predictor
+│   │   ├── ranker.py           # XGBoost link predictor training
+│   │   ├── tuning.py           # Bayesian hyperparameter search (Optuna)
+│   │   ├── interpret.py        # SHAP-based model explanations
+│   │   ├── evaluate.py         # Clustering and ranking evaluation metrics
+│   │   └── recommend.py        # Final recommendation function used by the API
+│   ├── models/                 # Trained model weights (GNN, XGBoost) go here
+│   ├── data/                   # Course data and embeddings go here
+│   ├── notebooks/              # Original exploratory pipeline (Colab-derived), kept for reference
+│   └── requirements.txt        # Python dependencies
 └── frontend/
-├── index.html
-├── styles.css
-└── script.js
+    ├── index.html
+    ├── styles.css
+    └── script.js
+```
 
 ## Getting started
 
