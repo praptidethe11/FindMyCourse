@@ -9,5 +9,9 @@ venv/
 backend/data/*
 !backend/data/.gitkeep
 
+# Trained model artifacts -- also regenerable, not source code
+backend/models/*
+!backend/models/.gitkeep
+
 # OS
 .DS_Store
